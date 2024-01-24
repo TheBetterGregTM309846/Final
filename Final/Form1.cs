@@ -14,6 +14,9 @@ namespace Final
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
+            string user = "Batman";
+            Form2 TBD = new Form2();
+            TBD.ShowDialog();
 
         }
     }
