@@ -71,7 +71,7 @@
             materialComboBox1.DropDownHeight = 174;
             materialComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             materialComboBox1.DropDownWidth = 121;
-            materialComboBox1.Font = new Font("Roboto Medium", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            materialComboBox1.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
             materialComboBox1.ForeColor = Color.FromArgb(222, 0, 0, 0);
             materialComboBox1.FormattingEnabled = true;
             materialComboBox1.IntegralHeight = false;
@@ -102,6 +102,7 @@
             materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             materialButton1.UseAccentColor = false;
             materialButton1.UseVisualStyleBackColor = true;
+            materialButton1.Click += materialButton1_Click;
             // 
             // Form1
             // 
@@ -112,7 +113,8 @@
             Controls.Add(materialComboBox1);
             Controls.Add(materialTextBox22);
             Name = "Form1";
-            Text = "Login";
+            Text = "s";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
