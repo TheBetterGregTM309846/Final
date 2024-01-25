@@ -325,6 +325,7 @@
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main Form";
+            FormClosing += Form2_FormClosing;
             Load += Form2_Load;
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ResumeLayout(false);

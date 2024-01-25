@@ -32,6 +32,7 @@
             nameCBox = new MaterialSkin.Controls.MaterialComboBox();
             antiLoggusBtn = new MaterialSkin.Controls.MaterialButton();
             passBox = new MaterialSkin.Controls.MaterialTextBox2();
+            forgor = new MaterialSkin.Controls.MaterialLabel();
             SuspendLayout();
             // 
             // nameCBox
@@ -49,7 +50,7 @@
             nameCBox.Hint = "Username";
             nameCBox.IntegralHeight = false;
             nameCBox.ItemHeight = 43;
-            nameCBox.Items.AddRange(new object[] { "Greg", "Hynes" });
+            nameCBox.Items.AddRange(new object[] { "Gregory Hynes", "Gregory Buckley", "Mann Talati" });
             nameCBox.Location = new Point(45, 12);
             nameCBox.MaxDropDownItems = 4;
             nameCBox.MouseState = MaterialSkin.MouseState.OUT;
@@ -109,11 +110,25 @@
             passBox.UseAccent = false;
             passBox.UseSystemPasswordChar = false;
             // 
+            // forgor
+            // 
+            forgor.AutoSize = true;
+            forgor.Depth = 0;
+            forgor.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            forgor.Location = new Point(180, 147);
+            forgor.MouseState = MaterialSkin.MouseState.HOVER;
+            forgor.Name = "forgor";
+            forgor.Size = new Size(115, 19);
+            forgor.TabIndex = 4;
+            forgor.Text = "Caps Lock Is On";
+            forgor.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(345, 195);
+            Controls.Add(forgor);
             Controls.Add(passBox);
             Controls.Add(antiLoggusBtn);
             Controls.Add(nameCBox);
@@ -122,7 +137,9 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
+            KeyDown += Form1_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -131,5 +148,6 @@
         private MaterialSkin.Controls.MaterialComboBox nameCBox;
         private MaterialSkin.Controls.MaterialButton antiLoggusBtn;
         private MaterialSkin.Controls.MaterialTextBox2 passBox;
+        private MaterialSkin.Controls.MaterialLabel forgor;
     }
 }
