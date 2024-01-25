@@ -31,8 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             nameCBox = new MaterialSkin.Controls.MaterialComboBox();
             antiLoggusBtn = new MaterialSkin.Controls.MaterialButton();
-            passBox = new MaterialSkin.Controls.MaterialTextBox2();
             forgor = new MaterialSkin.Controls.MaterialLabel();
+            passBox = new MaterialSkin.Controls.MaterialTextBox2();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             SuspendLayout();
             // 
             // nameCBox
@@ -51,11 +52,12 @@
             nameCBox.IntegralHeight = false;
             nameCBox.ItemHeight = 43;
             nameCBox.Items.AddRange(new object[] { "Gregory Hynes", "Gregory Buckley", "Mann Talati" });
-            nameCBox.Location = new Point(45, 12);
+            nameCBox.Location = new Point(51, 16);
+            nameCBox.Margin = new Padding(3, 4, 3, 4);
             nameCBox.MaxDropDownItems = 4;
             nameCBox.MouseState = MaterialSkin.MouseState.OUT;
             nameCBox.Name = "nameCBox";
-            nameCBox.Size = new Size(253, 49);
+            nameCBox.Size = new Size(289, 49);
             nameCBox.StartIndex = 0;
             nameCBox.TabIndex = 1;
             nameCBox.UseAccent = false;
@@ -67,8 +69,8 @@
             antiLoggusBtn.Depth = 0;
             antiLoggusBtn.HighEmphasis = true;
             antiLoggusBtn.Icon = null;
-            antiLoggusBtn.Location = new Point(48, 147);
-            antiLoggusBtn.Margin = new Padding(4, 6, 4, 6);
+            antiLoggusBtn.Location = new Point(55, 196);
+            antiLoggusBtn.Margin = new Padding(5, 8, 5, 8);
             antiLoggusBtn.MouseState = MaterialSkin.MouseState.HOVER;
             antiLoggusBtn.Name = "antiLoggusBtn";
             antiLoggusBtn.NoAccentTextColor = Color.Empty;
@@ -80,6 +82,19 @@
             antiLoggusBtn.UseVisualStyleBackColor = true;
             antiLoggusBtn.Click += materialButton1_Click;
             // 
+            // forgor
+            // 
+            forgor.AutoSize = true;
+            forgor.Depth = 0;
+            forgor.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            forgor.Location = new Point(206, 196);
+            forgor.MouseState = MaterialSkin.MouseState.HOVER;
+            forgor.Name = "forgor";
+            forgor.Size = new Size(115, 19);
+            forgor.TabIndex = 4;
+            forgor.Text = "Caps Lock Is On";
+            forgor.Visible = false;
+            // 
             // passBox
             // 
             passBox.AnimateReadOnly = false;
@@ -90,7 +105,8 @@
             passBox.HideSelection = true;
             passBox.Hint = "Password";
             passBox.LeadingIcon = null;
-            passBox.Location = new Point(45, 80);
+            passBox.Location = new Point(51, 107);
+            passBox.Margin = new Padding(3, 4, 3, 4);
             passBox.MaxLength = 32767;
             passBox.MouseState = MaterialSkin.MouseState.OUT;
             passBox.Name = "passBox";
@@ -102,7 +118,7 @@
             passBox.SelectionLength = 0;
             passBox.SelectionStart = 0;
             passBox.ShortcutsEnabled = true;
-            passBox.Size = new Size(250, 48);
+            passBox.Size = new Size(286, 48);
             passBox.TabIndex = 3;
             passBox.TabStop = false;
             passBox.TextAlign = HorizontalAlignment.Left;
@@ -110,30 +126,22 @@
             passBox.UseAccent = false;
             passBox.UseSystemPasswordChar = false;
             // 
-            // forgor
+            // backgroundWorker1
             // 
-            forgor.AutoSize = true;
-            forgor.Depth = 0;
-            forgor.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            forgor.Location = new Point(180, 147);
-            forgor.MouseState = MaterialSkin.MouseState.HOVER;
-            forgor.Name = "forgor";
-            forgor.Size = new Size(115, 19);
-            forgor.TabIndex = 4;
-            forgor.Text = "Caps Lock Is On";
-            forgor.Visible = false;
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(345, 195);
+            ClientSize = new Size(394, 260);
             Controls.Add(forgor);
             Controls.Add(passBox);
             Controls.Add(antiLoggusBtn);
             Controls.Add(nameCBox);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
@@ -147,7 +155,8 @@
         #endregion
         private MaterialSkin.Controls.MaterialComboBox nameCBox;
         private MaterialSkin.Controls.MaterialButton antiLoggusBtn;
-        private MaterialSkin.Controls.MaterialTextBox2 passBox;
         private MaterialSkin.Controls.MaterialLabel forgor;
+        private MaterialSkin.Controls.MaterialTextBox2 passBox;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

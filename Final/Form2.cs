@@ -30,7 +30,7 @@ namespace Final
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
+            this.Close(); //Closes every relating form.
         }
     }
 }

@@ -19,6 +19,8 @@ namespace Final
                 forgor.Visible = false;
             }
 
+            //backgroundWorker1.DoWork();
+
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace Final
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.CapsLock) 
+            if (e.KeyCode == Keys.CapsLock)
             {
                 if (forgor.Visible == true)
                 {
@@ -48,6 +50,18 @@ namespace Final
                 }
                 else { forgor.Visible = true; }
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            /*if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                MessageBox.Show("The Caps Lock key is ON.");
+            }
+            else
+            {
+                MessageBox.Show("The Caps Lock key is OFF.");
+            }*/
         }
     }
 }
