@@ -72,6 +72,7 @@
             fNameBox.TrailingIcon = null;
             fNameBox.UseAccent = false;
             fNameBox.UseSystemPasswordChar = false;
+            fNameBox.Click += fNameBox_Click;
             // 
             // materialTextBox21
             // 

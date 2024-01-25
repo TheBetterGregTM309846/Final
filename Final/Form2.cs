@@ -15,9 +15,15 @@ namespace Final
         public Form2(string value)
         {
             InitializeComponent();
+            this.Text = "Main Form - " + value;
         }
 
         private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fNameBox_Click(object sender, EventArgs e)
         {
 
         }

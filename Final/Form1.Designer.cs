@@ -49,6 +49,7 @@
             nameCBox.Hint = "Username";
             nameCBox.IntegralHeight = false;
             nameCBox.ItemHeight = 43;
+            nameCBox.Items.AddRange(new object[] { "Greg", "Hynes" });
             nameCBox.Location = new Point(45, 12);
             nameCBox.MaxDropDownItems = 4;
             nameCBox.MouseState = MaterialSkin.MouseState.OUT;
@@ -84,7 +85,7 @@
             passBox.BackgroundImageLayout = ImageLayout.None;
             passBox.CharacterCasing = CharacterCasing.Normal;
             passBox.Depth = 0;
-            passBox.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            passBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             passBox.HideSelection = true;
             passBox.Hint = "Password";
             passBox.LeadingIcon = null;
