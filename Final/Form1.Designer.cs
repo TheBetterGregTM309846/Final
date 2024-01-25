@@ -105,7 +105,7 @@
             passBox.TabIndex = 3;
             passBox.TabStop = false;
             passBox.TextAlign = HorizontalAlignment.Left;
-            passBox.TrailingIcon = null;
+            passBox.TrailingIcon = Properties.Resources.open;
             passBox.UseAccent = false;
             passBox.UseSystemPasswordChar = false;
             // 

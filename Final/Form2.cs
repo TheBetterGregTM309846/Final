@@ -15,12 +15,12 @@ namespace Final
         public Form2(string value)
         {
             InitializeComponent();
-            this.Text = "Main Form - " + value;
+            this.Text = "Main Form - " + value; // Shows the username for the second form.
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            MaximizeBox = false; // Prevents fullscreen button from working.
         }
 
         private void fNameBox_Click(object sender, EventArgs e)
