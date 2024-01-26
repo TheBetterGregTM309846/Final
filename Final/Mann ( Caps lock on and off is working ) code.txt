@@ -1,0 +1,106 @@
+using System.Drawing.Text;
+
+namespace Final
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;// set up the backgroundworker
+
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
+            MaximizeBox = false; // Prevents fullscreen button from working.
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                label.Visible = true;
+            }
+            else
+            {
+                label.Visible = false;
+            }
+
+            //backgroundWorker1.DoWork();
+
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            /* if (nameCBox.SelectedIndex == 0 && passBox.Text == "7777777" || nameCBox.SelectedIndex == 1 && passBox.Text == "GregWasHere" || nameCBox.SelectedIndex == 2 && passBox.Text == "ImGay" || nameCBox.SelectedIndex == 2 && passBox.Text == "ImGay")
+            {
+                string user = nameCBox.Text; // Creates a variable to be used to display username on the second form.
+                Form2 TBD = new Form2(user); // Passes said variable.
+                this.Hide(); // Used to hide the first form.
+                TBD.ShowDialog(); // Used to display the second form.
+            }
+            else { MessageBox.Show("Wrong password, try again.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); } */
+
+            string user = nameCBox.Text; // Creates a variable to be used to display username on the second form.
+            Form2 TBD = new Form2(user); // Passes said variable.
+            this.Hide(); // Used to hide the first form.
+            TBD.ShowDialog(); // Used to display the second form.
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.CapsLock)
+            {
+                if (label.Visible == true)
+                {
+                    label.Visible = false;
+                }
+                else { label.Visible = true; }
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            while (true)
+            {
+                bool capsLockOn = Control.IsKeyLocked(Keys.CapsLock); // Check the caps lock status
+                BeginInvoke(new Action(() =>// Update the label on the UI thread
+                {
+                    label.Text = capsLockOn ? "Caps Lock is On" : "";
+
+                }));
+
+                System.Threading.Thread.Sleep(100); // Sleep for a short interval
+            }
+        }
+
+        private void backgroundWorker2_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+
+        }
+
+        private void label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+    }
+}
