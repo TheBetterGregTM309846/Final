@@ -54,7 +54,8 @@
             fNameBox.HideSelection = true;
             fNameBox.Hint = "First name";
             fNameBox.LeadingIcon = null;
-            fNameBox.Location = new Point(13, 33);
+            fNameBox.Location = new Point(15, 44);
+            fNameBox.Margin = new Padding(3, 4, 3, 4);
             fNameBox.MaxLength = 32767;
             fNameBox.MouseState = MaterialSkin.MouseState.OUT;
             fNameBox.Name = "fNameBox";
@@ -66,7 +67,7 @@
             fNameBox.SelectionLength = 0;
             fNameBox.SelectionStart = 0;
             fNameBox.ShortcutsEnabled = true;
-            fNameBox.Size = new Size(200, 48);
+            fNameBox.Size = new Size(229, 48);
             fNameBox.TabIndex = 1;
             fNameBox.TabStop = false;
             fNameBox.TextAlign = HorizontalAlignment.Left;
@@ -85,7 +86,8 @@
             lNameBox.HideSelection = true;
             lNameBox.Hint = "Last Name";
             lNameBox.LeadingIcon = null;
-            lNameBox.Location = new Point(219, 33);
+            lNameBox.Location = new Point(250, 44);
+            lNameBox.Margin = new Padding(3, 4, 3, 4);
             lNameBox.MaxLength = 32767;
             lNameBox.MouseState = MaterialSkin.MouseState.OUT;
             lNameBox.Name = "lNameBox";
@@ -97,7 +99,7 @@
             lNameBox.SelectionLength = 0;
             lNameBox.SelectionStart = 0;
             lNameBox.ShortcutsEnabled = true;
-            lNameBox.Size = new Size(192, 48);
+            lNameBox.Size = new Size(219, 48);
             lNameBox.TabIndex = 2;
             lNameBox.TabStop = false;
             lNameBox.TextAlign = HorizontalAlignment.Left;
@@ -115,7 +117,8 @@
             phoneBox.HideSelection = true;
             phoneBox.Hint = "Phone";
             phoneBox.LeadingIcon = null;
-            phoneBox.Location = new Point(13, 87);
+            phoneBox.Location = new Point(15, 116);
+            phoneBox.Margin = new Padding(3, 4, 3, 4);
             phoneBox.MaxLength = 32767;
             phoneBox.MouseState = MaterialSkin.MouseState.OUT;
             phoneBox.Name = "phoneBox";
@@ -127,7 +130,7 @@
             phoneBox.SelectionLength = 0;
             phoneBox.SelectionStart = 0;
             phoneBox.ShortcutsEnabled = true;
-            phoneBox.Size = new Size(398, 48);
+            phoneBox.Size = new Size(455, 48);
             phoneBox.TabIndex = 3;
             phoneBox.TabStop = false;
             phoneBox.TextAlign = HorizontalAlignment.Left;
@@ -145,7 +148,8 @@
             IPBox.HideSelection = true;
             IPBox.Hint = "Address";
             IPBox.LeadingIcon = null;
-            IPBox.Location = new Point(13, 141);
+            IPBox.Location = new Point(15, 188);
+            IPBox.Margin = new Padding(3, 4, 3, 4);
             IPBox.MaxLength = 32767;
             IPBox.MouseState = MaterialSkin.MouseState.OUT;
             IPBox.Name = "IPBox";
@@ -157,7 +161,7 @@
             IPBox.SelectionLength = 0;
             IPBox.SelectionStart = 0;
             IPBox.ShortcutsEnabled = true;
-            IPBox.Size = new Size(398, 48);
+            IPBox.Size = new Size(455, 48);
             IPBox.TabIndex = 4;
             IPBox.TabStop = false;
             IPBox.TextAlign = HorizontalAlignment.Left;
@@ -173,7 +177,8 @@
             descBox.Depth = 0;
             descBox.HideSelection = true;
             descBox.Hint = "Prescription and comments";
-            descBox.Location = new Point(13, 195);
+            descBox.Location = new Point(15, 260);
+            descBox.Margin = new Padding(3, 4, 3, 4);
             descBox.MaxLength = 32767;
             descBox.MouseState = MaterialSkin.MouseState.OUT;
             descBox.Name = "descBox";
@@ -184,7 +189,7 @@
             descBox.SelectionLength = 0;
             descBox.SelectionStart = 0;
             descBox.ShortcutsEnabled = true;
-            descBox.Size = new Size(398, 129);
+            descBox.Size = new Size(455, 172);
             descBox.TabIndex = 5;
             descBox.TabStop = false;
             descBox.TextAlign = HorizontalAlignment.Left;
@@ -195,10 +200,11 @@
             deleteBtn.Depth = 0;
             deleteBtn.Icon = (Image)resources.GetObject("deleteBtn.Icon");
             deleteBtn.Image = (Image)resources.GetObject("deleteBtn.Image");
-            deleteBtn.Location = new Point(671, 388);
+            deleteBtn.Location = new Point(767, 517);
+            deleteBtn.Margin = new Padding(3, 4, 3, 4);
             deleteBtn.MouseState = MaterialSkin.MouseState.HOVER;
             deleteBtn.Name = "deleteBtn";
-            deleteBtn.Size = new Size(56, 56);
+            deleteBtn.Size = new Size(64, 75);
             deleteBtn.TabIndex = 6;
             deleteBtn.Text = "materialFloatingActionButton1";
             deleteBtn.UseVisualStyleBackColor = true;
@@ -208,13 +214,15 @@
             // 
             addBtn.Depth = 0;
             addBtn.Icon = (Image)resources.GetObject("addBtn.Icon");
-            addBtn.Location = new Point(427, 29);
+            addBtn.Location = new Point(488, 39);
+            addBtn.Margin = new Padding(3, 4, 3, 4);
             addBtn.MouseState = MaterialSkin.MouseState.HOVER;
             addBtn.Name = "addBtn";
-            addBtn.Size = new Size(56, 56);
+            addBtn.Size = new Size(64, 75);
             addBtn.TabIndex = 7;
             addBtn.Text = "materialFloatingActionButton2";
             addBtn.UseVisualStyleBackColor = true;
+            addBtn.Click += addBtn_Click_1;
             // 
             // searchBox
             // 
@@ -226,7 +234,8 @@
             searchBox.HideSelection = true;
             searchBox.Hint = "Search by last name";
             searchBox.LeadingIcon = null;
-            searchBox.Location = new Point(13, 333);
+            searchBox.Location = new Point(15, 444);
+            searchBox.Margin = new Padding(3, 4, 3, 4);
             searchBox.MaxLength = 32767;
             searchBox.MouseState = MaterialSkin.MouseState.OUT;
             searchBox.Name = "searchBox";
@@ -238,7 +247,7 @@
             searchBox.SelectionLength = 0;
             searchBox.SelectionStart = 0;
             searchBox.ShortcutsEnabled = true;
-            searchBox.Size = new Size(640, 48);
+            searchBox.Size = new Size(731, 48);
             searchBox.TabIndex = 8;
             searchBox.TabStop = false;
             searchBox.TextAlign = HorizontalAlignment.Left;
@@ -254,12 +263,12 @@
             updateBtn.Depth = 0;
             updateBtn.HighEmphasis = true;
             updateBtn.Icon = null;
-            updateBtn.Location = new Point(659, 453);
-            updateBtn.Margin = new Padding(4, 6, 4, 6);
+            updateBtn.Location = new Point(753, 604);
+            updateBtn.Margin = new Padding(5, 8, 5, 8);
             updateBtn.MouseState = MaterialSkin.MouseState.HOVER;
             updateBtn.Name = "updateBtn";
             updateBtn.NoAccentTextColor = Color.Empty;
-            updateBtn.Size = new Size(75, 36);
+            updateBtn.Size = new Size(86, 48);
             updateBtn.TabIndex = 9;
             updateBtn.Text = "Update";
             updateBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -275,12 +284,12 @@
             prntBtn.Depth = 0;
             prntBtn.HighEmphasis = true;
             prntBtn.Icon = null;
-            prntBtn.Location = new Point(660, 508);
-            prntBtn.Margin = new Padding(4, 6, 4, 6);
+            prntBtn.Location = new Point(754, 677);
+            prntBtn.Margin = new Padding(5, 8, 5, 8);
             prntBtn.MouseState = MaterialSkin.MouseState.HOVER;
             prntBtn.Name = "prntBtn";
             prntBtn.NoAccentTextColor = Color.Empty;
-            prntBtn.Size = new Size(75, 36);
+            prntBtn.Size = new Size(86, 48);
             prntBtn.TabIndex = 10;
             prntBtn.Text = "Print";
             prntBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -290,26 +299,30 @@
             // gridView
             // 
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Location = new Point(12, 388);
+            gridView.Location = new Point(14, 517);
+            gridView.Margin = new Padding(3, 4, 3, 4);
             gridView.Name = "gridView";
+            gridView.RowHeadersWidth = 51;
             gridView.RowTemplate.Height = 25;
-            gridView.Size = new Size(641, 257);
+            gridView.Size = new Size(733, 343);
             gridView.TabIndex = 11;
             // 
             // groupBox1
             // 
-            groupBox1.Location = new Point(5, 12);
+            groupBox1.Location = new Point(6, 16);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(416, 323);
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(475, 431);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             groupBox1.Text = "Adding a patient";
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(747, 658);
+            ClientSize = new Size(854, 877);
             Controls.Add(gridView);
             Controls.Add(prntBtn);
             Controls.Add(updateBtn);
@@ -324,6 +337,7 @@
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main Form";

@@ -13,7 +13,7 @@ namespace Final
 {
     public partial class Form2 : Form
     {
-        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\final.accdb")); //Checks for final.accdb on e
+        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\final.accdb")); //Checks for final.accdb on every system.
         OleDbCommand cmd = new OleDbCommand();
 
 
@@ -92,6 +92,11 @@ namespace Final
 
             cmd.ExecuteNonQuery();
             refillGrid();
+        }
+
+        private void addBtn_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

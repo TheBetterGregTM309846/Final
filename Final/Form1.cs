@@ -6,11 +6,13 @@ namespace Final
 {
     public partial class Form1 : Form
     {
-        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\2013.103281\\Documents\\final.accdb");
-        OleDbCommand cmd = new OleDbCommand();
+        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\final.accdb")); //Checks for final.accdb on every system.
         public Form1()
         {
             InitializeComponent();
+            backgroundWorker1.DoWork += backgroundWorker1_DoWork;// set up the backgroundworker
+
+            backgroundWorker1.RunWorkerAsync();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -64,18 +66,29 @@ namespace Final
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.CapsLock)
+            {
+                if (forgor.Visible == true)
+                {
+                    forgor.Visible = false;
+                }
+                else { forgor.Visible = true; }
+            }
         }
 
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-            /*if (Control.IsKeyLocked(Keys.CapsLock))
+            while (true)
             {
-                MessageBox.Show("The Caps Lock key is ON.");
+                bool capsLockOn = Control.IsKeyLocked(Keys.CapsLock); // Check the caps lock status
+                BeginInvoke(new Action(() =>// Update the label on the UI thread
+                {
+                    forgor.Text = capsLockOn ? "Caps Lock is On" : "";
+
+                }));
+
+                System.Threading.Thread.Sleep(100); // Sleep for a short interval
             }
-            else
-            {
-                MessageBox.Show("The Caps Lock key is OFF.");
-            }*/
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
