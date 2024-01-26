@@ -13,8 +13,10 @@ namespace Final
 {
     public partial class Form2 : Form
     {
-        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\2013.103281\\Documents\\final.accdb");
+        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\final.accdb")); //Checks for final.accdb on e
         OleDbCommand cmd = new OleDbCommand();
+
+
         public Form2(string value = "")
         {
             InitializeComponent();
@@ -69,5 +71,28 @@ namespace Final
             dataAdapter.Update(updatedDataTable);
             refillGrid();
         }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            string f = fNameBox.Text;
+            string l = fNameBox.Text;
+
+            OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
+
+
+            // Create the SelectCommand.
+            cmd = new OleDbCommand("SELECT (FName, LName) FROM meds", conn);
+
+            dataAdapter.SelectCommand = cmd;
+
+            // Create the InsertCommand.
+            cmd = new OleDbCommand("INSERT INTO meds (FName,LName) " + "VALUES" + (f, l) + "", conn);
+
+
+
+            cmd.ExecuteNonQuery();
+            refillGrid();
+        }
     }
 }
+
