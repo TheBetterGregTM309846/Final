@@ -1,7 +1,13 @@
+using Microsoft.Data.SqlClient;
+using System.Data;
+using System.Data.OleDb;
+
 namespace Final
 {
     public partial class Form1 : Form
     {
+        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\2013.103281\\Documents\\final.accdb");
+        OleDbCommand cmd = new OleDbCommand();
         public Form1()
         {
             InitializeComponent();
@@ -34,10 +40,21 @@ namespace Final
             }
             else { MessageBox.Show("Wrong password, try again.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); } */
 
-            string user = nameCBox.Text; // Creates a variable to be used to display username on the second form.
-            Form2 TBD = new Form2(user); // Passes said variable.
-            this.Hide(); // Used to hide the first form.
-            TBD.ShowDialog(); // Used to display the second form.
+            conn.Open();
+            OleDbCommand command = new OleDbCommand();
+            command.Connection = conn;
+            command.CommandText = "select * from users where Username=" +nameCBox.Text+" and Password= "+passBox.Text+"";
+            command.ExecuteNonQuery();
+
+            OleDbDataReader reader = command.ExecuteReader();
+            int count = 0;
+            while (reader.Read()) 
+            {
+                count++;
+
+            }
+
+            conn.Close();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -47,14 +64,6 @@ namespace Final
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.CapsLock)
-            {
-                if (forgor.Visible == true)
-                {
-                    forgor.Visible = false;
-                }
-                else { forgor.Visible = true; }
-            }
         }
 
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
@@ -67,6 +76,18 @@ namespace Final
             {
                 MessageBox.Show("The Caps Lock key is OFF.");
             }*/
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.CapsLock)
+            {
+                if (forgor.Visible == true)
+                {
+                    forgor.Visible = false;
+                }
+                else { forgor.Visible = true; }
+            }
         }
     }
 }

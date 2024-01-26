@@ -52,12 +52,11 @@
             nameCBox.IntegralHeight = false;
             nameCBox.ItemHeight = 43;
             nameCBox.Items.AddRange(new object[] { "Gregory Hynes", "Gregory Buckley", "Mann Talati" });
-            nameCBox.Location = new Point(51, 16);
-            nameCBox.Margin = new Padding(3, 4, 3, 4);
+            nameCBox.Location = new Point(45, 12);
             nameCBox.MaxDropDownItems = 4;
             nameCBox.MouseState = MaterialSkin.MouseState.OUT;
             nameCBox.Name = "nameCBox";
-            nameCBox.Size = new Size(289, 49);
+            nameCBox.Size = new Size(253, 49);
             nameCBox.StartIndex = 0;
             nameCBox.TabIndex = 1;
             nameCBox.UseAccent = false;
@@ -69,8 +68,8 @@
             antiLoggusBtn.Depth = 0;
             antiLoggusBtn.HighEmphasis = true;
             antiLoggusBtn.Icon = null;
-            antiLoggusBtn.Location = new Point(55, 196);
-            antiLoggusBtn.Margin = new Padding(5, 8, 5, 8);
+            antiLoggusBtn.Location = new Point(48, 147);
+            antiLoggusBtn.Margin = new Padding(4, 6, 4, 6);
             antiLoggusBtn.MouseState = MaterialSkin.MouseState.HOVER;
             antiLoggusBtn.Name = "antiLoggusBtn";
             antiLoggusBtn.NoAccentTextColor = Color.Empty;
@@ -87,7 +86,7 @@
             forgor.AutoSize = true;
             forgor.Depth = 0;
             forgor.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            forgor.Location = new Point(206, 196);
+            forgor.Location = new Point(180, 147);
             forgor.MouseState = MaterialSkin.MouseState.HOVER;
             forgor.Name = "forgor";
             forgor.Size = new Size(115, 19);
@@ -105,8 +104,7 @@
             passBox.HideSelection = true;
             passBox.Hint = "Password";
             passBox.LeadingIcon = null;
-            passBox.Location = new Point(51, 107);
-            passBox.Margin = new Padding(3, 4, 3, 4);
+            passBox.Location = new Point(45, 80);
             passBox.MaxLength = 32767;
             passBox.MouseState = MaterialSkin.MouseState.OUT;
             passBox.Name = "passBox";
@@ -118,7 +116,7 @@
             passBox.SelectionLength = 0;
             passBox.SelectionStart = 0;
             passBox.ShortcutsEnabled = true;
-            passBox.Size = new Size(286, 48);
+            passBox.Size = new Size(250, 48);
             passBox.TabIndex = 3;
             passBox.TabStop = false;
             passBox.TextAlign = HorizontalAlignment.Left;
@@ -132,22 +130,22 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(394, 260);
+            ClientSize = new Size(345, 195);
             Controls.Add(forgor);
             Controls.Add(passBox);
             Controls.Add(antiLoggusBtn);
             Controls.Add(nameCBox);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             KeyDown += Form1_KeyDown;
+            KeyUp += Form1_KeyUp;
             ResumeLayout(false);
             PerformLayout();
         }
