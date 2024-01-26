@@ -33,6 +33,11 @@ namespace Final
                 TBD.ShowDialog(); // Used to display the second form.
             }
             else { MessageBox.Show("Wrong password, try again.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); } */
+
+            string user = nameCBox.Text; // Creates a variable to be used to display username on the second form.
+            Form2 TBD = new Form2(user); // Passes said variable.
+            this.Hide(); // Used to hide the first form.
+            TBD.ShowDialog(); // Used to display the second form.
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

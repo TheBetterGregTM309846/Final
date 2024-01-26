@@ -202,6 +202,7 @@
             deleteBtn.TabIndex = 6;
             deleteBtn.Text = "materialFloatingActionButton1";
             deleteBtn.UseVisualStyleBackColor = true;
+            deleteBtn.Click += deleteBtn_Click;
             // 
             // addBtn
             // 
@@ -253,7 +254,7 @@
             updateBtn.Depth = 0;
             updateBtn.HighEmphasis = true;
             updateBtn.Icon = null;
-            updateBtn.Location = new Point(481, 654);
+            updateBtn.Location = new Point(659, 453);
             updateBtn.Margin = new Padding(4, 6, 4, 6);
             updateBtn.MouseState = MaterialSkin.MouseState.HOVER;
             updateBtn.Name = "updateBtn";
@@ -264,6 +265,7 @@
             updateBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             updateBtn.UseAccentColor = false;
             updateBtn.UseVisualStyleBackColor = true;
+            updateBtn.Click += updateBtn_Click;
             // 
             // prntBtn
             // 
@@ -273,7 +275,7 @@
             prntBtn.Depth = 0;
             prntBtn.HighEmphasis = true;
             prntBtn.Icon = null;
-            prntBtn.Location = new Point(578, 654);
+            prntBtn.Location = new Point(660, 508);
             prntBtn.Margin = new Padding(4, 6, 4, 6);
             prntBtn.MouseState = MaterialSkin.MouseState.HOVER;
             prntBtn.Name = "prntBtn";
@@ -307,7 +309,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(736, 694);
+            ClientSize = new Size(747, 658);
             Controls.Add(gridView);
             Controls.Add(prntBtn);
             Controls.Add(updateBtn);
