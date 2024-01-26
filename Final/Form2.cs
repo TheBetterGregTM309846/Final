@@ -52,8 +52,8 @@ namespace Final
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            int id = 0;
-            cmd.CommandText = "delete from meds where ID = " + id + "";
+            string id = "Amogus";
+            cmd.CommandText = "delete from meds where LName = " + id + "";
             cmd.ExecuteNonQuery();
             refillGrid();
         }
@@ -92,11 +92,6 @@ namespace Final
 
             cmd.ExecuteNonQuery();
             refillGrid();
-        }
-
-        private void addBtn_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -222,7 +222,7 @@
             addBtn.TabIndex = 7;
             addBtn.Text = "materialFloatingActionButton2";
             addBtn.UseVisualStyleBackColor = true;
-            addBtn.Click += addBtn_Click_1;
+            addBtn.Click += addBtn_Click;
             // 
             // searchBox
             // 

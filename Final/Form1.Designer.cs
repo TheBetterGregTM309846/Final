@@ -34,6 +34,7 @@
             forgor = new MaterialSkin.Controls.MaterialLabel();
             passBox = new MaterialSkin.Controls.MaterialTextBox2();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            label1 = new Label();
             SuspendLayout();
             // 
             // nameCBox
@@ -130,11 +131,22 @@
             // 
             backgroundWorker1.DoWork += backgroundWorker1_DoWork;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(297, 231);
+            label1.Name = "label1";
+            label1.Size = new Size(85, 20);
+            label1.TabIndex = 5;
+            label1.Text = "Force Open";
+            label1.Click += label1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(394, 260);
+            Controls.Add(label1);
             Controls.Add(forgor);
             Controls.Add(passBox);
             Controls.Add(antiLoggusBtn);
@@ -147,8 +159,6 @@
             Text = "Login";
             FormClosing += Form1_FormClosing;
             Load += Form1_Load;
-            KeyDown += Form1_KeyDown;
-            KeyUp += Form1_KeyUp;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -159,5 +169,6 @@
         private MaterialSkin.Controls.MaterialLabel forgor;
         private MaterialSkin.Controls.MaterialTextBox2 passBox;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Label label1;
     }
 }
