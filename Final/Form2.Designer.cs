@@ -254,6 +254,7 @@
             searchBox.TrailingIcon = null;
             searchBox.UseAccent = false;
             searchBox.UseSystemPasswordChar = false;
+            searchBox.LeadingIconClick += searchBox_LeadingIconClick;
             // 
             // updateBtn
             // 
@@ -310,12 +311,12 @@
             // gridView
             // 
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Location = new Point(14, 517);
+            gridView.Location = new Point(15, 517);
             gridView.Margin = new Padding(3, 4, 3, 4);
             gridView.Name = "gridView";
             gridView.RowHeadersWidth = 51;
             gridView.RowTemplate.Height = 25;
-            gridView.Size = new Size(733, 343);
+            gridView.Size = new Size(730, 343);
             gridView.TabIndex = 11;
             // 
             // Form2
