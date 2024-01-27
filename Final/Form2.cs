@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design.Serialization;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
@@ -34,6 +35,7 @@ namespace Final
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            
             MaximizeBox = false; // Prevents fullscreen button from working.
             conn.Open(); // opens a connection to the access file.
             cmd.Connection = conn; // Tells the cmd command to work in this connection.
@@ -52,10 +54,25 @@ namespace Final
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            string id = "Amogus";
-            cmd.CommandText = "delete from meds where LName = " + id + "";
-            cmd.ExecuteNonQuery();
+
+            if (this.gridView.SelectedRows.Count > 0)
+            {
+                gridView.Rows.RemoveAt(this.gridView.SelectedRows[0].Index);
+            }
+
+            
+
+            OleDbDataAdapter dataAdapter =
+                   new OleDbDataAdapter("select * from meds", conn);
+
+            DataTable updatedDataTable = (DataTable)gridView.DataSource;
+
+            OleDbCommandBuilder commandBuilder =
+                new OleDbCommandBuilder(dataAdapter);
+
+            dataAdapter.Update(updatedDataTable);
             refillGrid();
+            
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
@@ -74,19 +91,16 @@ namespace Final
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            string f = fNameBox.Text;
-            string l = fNameBox.Text;
+            OleDbDataAdapter dataAdapter =
+                  new OleDbDataAdapter("select * from meds", conn);
 
-            OleDbDataAdapter dataAdapter = new OleDbDataAdapter();
+           
+            DataTable updatedDataTable = (DataTable)gridView.DataSource;
 
+            OleDbCommandBuilder commandBuilder =
+                new OleDbCommandBuilder(dataAdapter);
 
-            // Create the SelectCommand.
-            cmd = new OleDbCommand("SELECT (FName, LName) FROM meds", conn);
-
-            dataAdapter.SelectCommand = cmd;
-
-            // Create the InsertCommand.
-            cmd = new OleDbCommand("INSERT INTO meds (FName,LName) " + "VALUES" + (f, l) + "", conn);
+         updatedDataTable.Columns.Clear();
 
 
 

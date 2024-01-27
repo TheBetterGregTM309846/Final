@@ -39,8 +39,8 @@
             searchBox = new MaterialSkin.Controls.MaterialTextBox2();
             updateBtn = new MaterialSkin.Controls.MaterialButton();
             prntBtn = new MaterialSkin.Controls.MaterialButton();
-            gridView = new DataGridView();
             groupBox1 = new GroupBox();
+            gridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             SuspendLayout();
             // 
@@ -296,17 +296,6 @@
             prntBtn.UseAccentColor = false;
             prntBtn.UseVisualStyleBackColor = true;
             // 
-            // gridView
-            // 
-            gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Location = new Point(14, 517);
-            gridView.Margin = new Padding(3, 4, 3, 4);
-            gridView.Name = "gridView";
-            gridView.RowHeadersWidth = 51;
-            gridView.RowTemplate.Height = 25;
-            gridView.Size = new Size(733, 343);
-            gridView.TabIndex = 11;
-            // 
             // groupBox1
             // 
             groupBox1.Location = new Point(6, 16);
@@ -317,6 +306,17 @@
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             groupBox1.Text = "Adding a patient";
+            // 
+            // gridView
+            // 
+            gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridView.Location = new Point(14, 517);
+            gridView.Margin = new Padding(3, 4, 3, 4);
+            gridView.Name = "gridView";
+            gridView.RowHeadersWidth = 51;
+            gridView.RowTemplate.Height = 25;
+            gridView.Size = new Size(733, 343);
+            gridView.TabIndex = 11;
             // 
             // Form2
             // 
@@ -359,7 +359,7 @@
         private MaterialSkin.Controls.MaterialTextBox2 searchBox;
         private MaterialSkin.Controls.MaterialButton updateBtn;
         private MaterialSkin.Controls.MaterialButton prntBtn;
-        private DataGridView gridView;
         private GroupBox groupBox1;
+        private DataGridView gridView;
     }
 }

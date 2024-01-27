@@ -16,7 +16,15 @@ namespace Final
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
+            if (Control.IsKeyLocked(Keys.CapsLock) == true) 
+            {
+                forgor.Visible = true;
+            }
+            else 
+            {
+                forgor.Visible = false;
+            }
             backgroundWorker1.RunWorkerAsync();
 
             MaximizeBox = false; // Prevents fullscreen button from working.
