@@ -7,7 +7,6 @@ namespace Final
 
     public partial class Form1 : Form
     {
-        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\final.accdb")); //Checks for final.accdb on every system.
         public Form1()
         {
             InitializeComponent();
@@ -33,13 +32,27 @@ namespace Final
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
+            OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\final.accdb")); //Checks for final.accdb on every system.
             conn.Open();
             OleDbCommand command = new OleDbCommand();
             command.Connection = conn;
+            command.CommandType = CommandType.Text;
             command.CommandText = "select * from users where Username=" + nameCBox.Text + " and Password= " + passBox.Text + "";
             command.ExecuteNonQuery();
 
+            command.Parameters.AddWithValue("@Username", nameCBox.Text.Trim());
+            command.Parameters.AddWithValue("@Password", nameCBox.Text.Trim());
+
             OleDbDataReader reader = command.ExecuteReader();
+            if (reader.Read() == true)
+            {
+                string user = nameCBox.Text; // Creates a variable to be used to display username on the second form.
+                Form2 TBD = new Form2(user); // Passes said variable.
+                this.Hide(); // Used to hide the first form.
+                TBD.ShowDialog(); // Used to display the second form.
+            }
+            else { MessageBox.Show("Wrong password, try again.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
             conn.Close();
         }
 
