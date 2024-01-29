@@ -33,7 +33,6 @@ namespace Final
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-
             conn.Open();
             OleDbCommand command = new OleDbCommand();
             command.Connection = conn;
@@ -41,13 +40,6 @@ namespace Final
             command.ExecuteNonQuery();
 
             OleDbDataReader reader = command.ExecuteReader();
-            int count = 0;
-            while (reader.Read())
-            {
-                count++;
-
-            }
-
             conn.Close();
         }
 
