@@ -244,7 +244,7 @@
             searchBox.TabIndex = 8;
             searchBox.TabStop = false;
             searchBox.TextAlign = HorizontalAlignment.Left;
-            searchBox.TrailingIcon = Properties.Resources.jhjhk;
+            searchBox.TrailingIcon = Properties.Resources._1200px_Magnifying_glass_icon_svg;
             searchBox.UseAccent = false;
             searchBox.UseSystemPasswordChar = false;
             searchBox.LeadingIconClick += searchBox_LeadingIconClick;

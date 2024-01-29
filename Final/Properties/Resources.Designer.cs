@@ -63,6 +63,16 @@ namespace Final.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1200px_Magnifying_glass_icon_svg {
+            get {
+                object obj = ResourceManager.GetObject("1200px-Magnifying_glass_icon.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jhjhk {
             get {
                 object obj = ResourceManager.GetObject("jhjhk", resourceCulture);
