@@ -1,4 +1,4 @@
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using System.Data;
 using System.Data.OleDb;
 
@@ -15,18 +15,6 @@ namespace Final
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            if (Control.IsKeyLocked(Keys.CapsLock) == true)
-            {
-                forgor.Visible = true;
-            }
-            else
-            {
-                forgor.Visible = false;
-            }
-            backgroundWorker1.RunWorkerAsync();
-
-            MaximizeBox = false; // Prevents fullscreen button from working.
 
         }
 
@@ -57,18 +45,6 @@ namespace Final
 
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
-
-            while (true)
-            {
-                bool capsLockOn = Control.IsKeyLocked(Keys.CapsLock); // Check the caps lock status
-                BeginInvoke(new Action(() =>// Update the forgor on the UI thread
-                {
-                    forgor.Text = capsLockOn ? "Caps Lock is On" : "";
-
-                }));
-
-                System.Threading.Thread.Sleep(100); // Sleep for a short interval
-            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -79,6 +55,13 @@ namespace Final
             TBD.ShowDialog(); // Used to display the second form.
         }
 
-
+        private void showPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (showPass.Checked == true)
+            {
+                passBox.PasswordChar = '\0';
+            }
+            else { passBox.PasswordChar = '●'; }
+        }
     }
 }

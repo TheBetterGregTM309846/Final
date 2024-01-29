@@ -20,7 +20,7 @@ namespace Final
         OleDbCommand cmd = new OleDbCommand();
 
 
-        public Form2(string value = "")
+        public Form2(string value) // passes the username to the form
         {
             InitializeComponent();
             this.Text = "Main Form - " + value; // Shows the username for the second form.
@@ -111,6 +111,8 @@ namespace Final
             //gridView.DataSource = yourList;
 
             //yourList.Clear();
+
+
         }
     }
 }

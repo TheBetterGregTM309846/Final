@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             nameCBox = new MaterialSkin.Controls.MaterialComboBox();
             antiLoggusBtn = new MaterialSkin.Controls.MaterialButton();
-            forgor = new MaterialSkin.Controls.MaterialLabel();
             passBox = new MaterialSkin.Controls.MaterialTextBox2();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            showPass = new MaterialSkin.Controls.MaterialSwitch();
             SuspendLayout();
             // 
             // nameCBox
@@ -81,19 +81,6 @@
             antiLoggusBtn.UseVisualStyleBackColor = true;
             antiLoggusBtn.Click += materialButton1_Click;
             // 
-            // forgor
-            // 
-            forgor.AutoSize = true;
-            forgor.Depth = 0;
-            forgor.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            forgor.Location = new Point(180, 147);
-            forgor.MouseState = MaterialSkin.MouseState.HOVER;
-            forgor.Name = "forgor";
-            forgor.Size = new Size(115, 19);
-            forgor.TabIndex = 4;
-            forgor.Text = "Caps Lock Is On";
-            forgor.Visible = false;
-            // 
             // passBox
             // 
             passBox.AnimateReadOnly = false;
@@ -128,12 +115,28 @@
             // 
             backgroundWorker1.DoWork += backgroundWorker1_DoWork;
             // 
+            // showPass
+            // 
+            showPass.AutoSize = true;
+            showPass.Depth = 0;
+            showPass.Location = new Point(125, 146);
+            showPass.Margin = new Padding(0);
+            showPass.MouseLocation = new Point(-1, -1);
+            showPass.MouseState = MaterialSkin.MouseState.HOVER;
+            showPass.Name = "showPass";
+            showPass.Ripple = true;
+            showPass.Size = new Size(172, 37);
+            showPass.TabIndex = 6;
+            showPass.Text = "Show Password";
+            showPass.UseVisualStyleBackColor = true;
+            showPass.CheckedChanged += showPass_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(345, 195);
-            Controls.Add(forgor);
+            Controls.Add(showPass);
             Controls.Add(passBox);
             Controls.Add(antiLoggusBtn);
             Controls.Add(nameCBox);
@@ -151,8 +154,8 @@
         #endregion
         private MaterialSkin.Controls.MaterialComboBox nameCBox;
         private MaterialSkin.Controls.MaterialButton antiLoggusBtn;
-        private MaterialSkin.Controls.MaterialLabel forgor;
         private MaterialSkin.Controls.MaterialTextBox2 passBox;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private MaterialSkin.Controls.MaterialSwitch showPass;
     }
 }

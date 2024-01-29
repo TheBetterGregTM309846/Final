@@ -188,6 +188,7 @@
             descBox.TabIndex = 5;
             descBox.TabStop = false;
             descBox.TextAlign = HorizontalAlignment.Left;
+            descBox.UseAccent = false;
             descBox.UseSystemPasswordChar = false;
             // 
             // deleteBtn
@@ -243,7 +244,7 @@
             searchBox.TabIndex = 8;
             searchBox.TabStop = false;
             searchBox.TextAlign = HorizontalAlignment.Left;
-            searchBox.TrailingIcon = null;
+            searchBox.TrailingIcon = Properties.Resources.jhjhk;
             searchBox.UseAccent = false;
             searchBox.UseSystemPasswordChar = false;
             searchBox.LeadingIconClick += searchBox_LeadingIconClick;
