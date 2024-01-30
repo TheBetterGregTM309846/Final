@@ -51,7 +51,6 @@
             nameCBox.Hint = "Username";
             nameCBox.IntegralHeight = false;
             nameCBox.ItemHeight = 43;
-            nameCBox.Items.AddRange(new object[] { "Austin Morrison-Prieur", "Gregory Buckley", "Gregory Hynes", "Mann Talati" });
             nameCBox.Location = new Point(45, 12);
             nameCBox.MaxDropDownItems = 4;
             nameCBox.MouseState = MaterialSkin.MouseState.OUT;
