@@ -58,6 +58,8 @@ namespace Final
             {
                 gridView.Rows.RemoveAt(this.gridView.SelectedRows[0].Index);
             }
+            updateBtn_Click(sender, e);
+
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
@@ -79,31 +81,39 @@ namespace Final
             DataTable tab = (DataTable)gridView.DataSource;
 
             DataRow row = tab.NewRow();
-
-            int id = tab.Rows.Count + 1;
             string ln = lNameBox.Text;
             string fn = fNameBox.Text;
             string num = phoneBox.Text;
             string res = IPBox.Text;
             string per = descBox.Text;
 
-            row[0] = id;
-            row[1] = ln;
-            row[2] = fn;
-            row[3] = num;
-            row[4] = res;
-            row[5] = per;
+            //row[0] = id;
+            //row[1] = ln;
+            //row[2] = fn;
+            //row[3] = num;
+            //row[4] = res;
+            //row[5] = per;
+
+            cmd.CommandText = "insert into meds ([LName], [FName], [PhoneNum], [Residence], [Prescription]) values (@first,@second,@third,@fourth,@fifth)";
+            cmd.Parameters.Add("@first", OleDbType.VarChar).Value = ln ;
+            cmd.Parameters.Add("@second", OleDbType.VarChar).Value = fn;
+            cmd.Parameters.Add("@third", OleDbType.VarChar).Value = num;
+            cmd.Parameters.Add("@fourth", OleDbType.VarChar).Value = res;
+            cmd.Parameters.Add("@fifth", OleDbType.VarChar).Value = per;
+            cmd.ExecuteNonQuery();
+            refillGrid();
+
+            MessageBox.Show("Insertion Successful",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.ServiceNotification);
 
             tab.Rows.Add(row);
 
             cmd.ExecuteNonQuery();
             refillGrid();
-            //MessageBox.Show("Insertion Successful",
-            //     "Success",
-            //     MessageBoxButtons.OK,
-            //     MessageBoxIcon.Information,
-            //     MessageBoxDefaultButton.Button1,
-            //     MessageBoxOptions.ServiceNotification);
         }
 
         private void searchBox_LeadingIconClick(object sender, EventArgs e)
