@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            fNameBox = new MaterialSkin.Controls.MaterialTextBox2();
+            NameBox = new MaterialSkin.Controls.MaterialTextBox2();
             lNameBox = new MaterialSkin.Controls.MaterialTextBox2();
             phoneBox = new MaterialSkin.Controls.MaterialTextBox2();
             IPBox = new MaterialSkin.Controls.MaterialTextBox2();
@@ -38,42 +38,42 @@
             addBtn = new MaterialSkin.Controls.MaterialFloatingActionButton();
             searchBox = new MaterialSkin.Controls.MaterialTextBox2();
             updateBtn = new MaterialSkin.Controls.MaterialButton();
-            prntBtn = new MaterialSkin.Controls.MaterialButton();
+            printBtn = new MaterialSkin.Controls.MaterialButton();
             groupBox1 = new GroupBox();
             gridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             SuspendLayout();
             // 
-            // fNameBox
+            // NameBox
             // 
-            fNameBox.AnimateReadOnly = false;
-            fNameBox.BackgroundImageLayout = ImageLayout.None;
-            fNameBox.CharacterCasing = CharacterCasing.Normal;
-            fNameBox.Depth = 0;
-            fNameBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            fNameBox.HideSelection = true;
-            fNameBox.Hint = "First name";
-            fNameBox.LeadingIcon = null;
-            fNameBox.Location = new Point(13, 33);
-            fNameBox.MaxLength = 32767;
-            fNameBox.MouseState = MaterialSkin.MouseState.OUT;
-            fNameBox.Name = "fNameBox";
-            fNameBox.PasswordChar = '\0';
-            fNameBox.PrefixSuffixText = null;
-            fNameBox.ReadOnly = false;
-            fNameBox.RightToLeft = RightToLeft.No;
-            fNameBox.SelectedText = "";
-            fNameBox.SelectionLength = 0;
-            fNameBox.SelectionStart = 0;
-            fNameBox.ShortcutsEnabled = true;
-            fNameBox.Size = new Size(200, 48);
-            fNameBox.TabIndex = 1;
-            fNameBox.TabStop = false;
-            fNameBox.TextAlign = HorizontalAlignment.Left;
-            fNameBox.TrailingIcon = null;
-            fNameBox.UseAccent = false;
-            fNameBox.UseSystemPasswordChar = false;
-            fNameBox.Click += fNameBox_Click;
+            NameBox.AnimateReadOnly = false;
+            NameBox.BackgroundImageLayout = ImageLayout.None;
+            NameBox.CharacterCasing = CharacterCasing.Normal;
+            NameBox.Depth = 0;
+            NameBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            NameBox.HideSelection = true;
+            NameBox.Hint = "First name";
+            NameBox.LeadingIcon = null;
+            NameBox.Location = new Point(13, 33);
+            NameBox.MaxLength = 32767;
+            NameBox.MouseState = MaterialSkin.MouseState.OUT;
+            NameBox.Name = "NameBox";
+            NameBox.PasswordChar = '\0';
+            NameBox.PrefixSuffixText = null;
+            NameBox.ReadOnly = false;
+            NameBox.RightToLeft = RightToLeft.No;
+            NameBox.SelectedText = "";
+            NameBox.SelectionLength = 0;
+            NameBox.SelectionStart = 0;
+            NameBox.ShortcutsEnabled = true;
+            NameBox.Size = new Size(200, 48);
+            NameBox.TabIndex = 1;
+            NameBox.TabStop = false;
+            NameBox.TextAlign = HorizontalAlignment.Left;
+            NameBox.TrailingIcon = null;
+            NameBox.UseAccent = false;
+            NameBox.UseSystemPasswordChar = false;
+            NameBox.Click += fNameBox_Click;
             // 
             // lNameBox
             // 
@@ -271,25 +271,26 @@
             updateBtn.UseVisualStyleBackColor = true;
             updateBtn.Click += updateBtn_Click;
             // 
-            // prntBtn
+            // printBtn
             // 
-            prntBtn.AutoSize = false;
-            prntBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            prntBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            prntBtn.Depth = 0;
-            prntBtn.HighEmphasis = true;
-            prntBtn.Icon = null;
-            prntBtn.Location = new Point(682, 509);
-            prntBtn.Margin = new Padding(4, 6, 4, 6);
-            prntBtn.MouseState = MaterialSkin.MouseState.HOVER;
-            prntBtn.Name = "prntBtn";
-            prntBtn.NoAccentTextColor = Color.Empty;
-            prntBtn.Size = new Size(75, 36);
-            prntBtn.TabIndex = 10;
-            prntBtn.Text = "Print";
-            prntBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            prntBtn.UseAccentColor = false;
-            prntBtn.UseVisualStyleBackColor = true;
+            printBtn.AutoSize = false;
+            printBtn.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            printBtn.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            printBtn.Depth = 0;
+            printBtn.HighEmphasis = true;
+            printBtn.Icon = null;
+            printBtn.Location = new Point(682, 509);
+            printBtn.Margin = new Padding(4, 6, 4, 6);
+            printBtn.MouseState = MaterialSkin.MouseState.HOVER;
+            printBtn.Name = "printBtn";
+            printBtn.NoAccentTextColor = Color.Empty;
+            printBtn.Size = new Size(75, 36);
+            printBtn.TabIndex = 10;
+            printBtn.Text = "Print";
+            printBtn.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            printBtn.UseAccentColor = false;
+            printBtn.UseVisualStyleBackColor = true;
+            printBtn.Click += prntBtn_Click;
             // 
             // groupBox1
             // 
@@ -316,7 +317,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(766, 649);
             Controls.Add(gridView);
-            Controls.Add(prntBtn);
+            Controls.Add(printBtn);
             Controls.Add(updateBtn);
             Controls.Add(searchBox);
             Controls.Add(addBtn);
@@ -325,7 +326,7 @@
             Controls.Add(IPBox);
             Controls.Add(phoneBox);
             Controls.Add(lNameBox);
-            Controls.Add(fNameBox);
+            Controls.Add(NameBox);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -340,7 +341,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTextBox2 fNameBox;
+        private MaterialSkin.Controls.MaterialTextBox2 NameBox;
         private MaterialSkin.Controls.MaterialTextBox2 lNameBox;
         private MaterialSkin.Controls.MaterialTextBox2 phoneBox;
         private MaterialSkin.Controls.MaterialTextBox2 IPBox;
@@ -349,7 +350,7 @@
         private MaterialSkin.Controls.MaterialFloatingActionButton addBtn;
         private MaterialSkin.Controls.MaterialTextBox2 searchBox;
         private MaterialSkin.Controls.MaterialButton updateBtn;
-        private MaterialSkin.Controls.MaterialButton prntBtn;
+        private MaterialSkin.Controls.MaterialButton printBtn;
         private GroupBox groupBox1;
         private DataGridView gridView;
     }

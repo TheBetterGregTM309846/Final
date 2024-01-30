@@ -1,4 +1,6 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design.Serialization;
@@ -8,6 +10,7 @@ using System.Data.OleDb;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -82,7 +85,7 @@ namespace Final
 
             int id = tab.Rows.Count + 1;
             string ln = lNameBox.Text;
-            string fn = fNameBox.Text;
+            string fn = NameBox.Text;
             string num = phoneBox.Text;
             string res = IPBox.Text;
             string per = descBox.Text;
@@ -134,6 +137,31 @@ namespace Final
                     MessageBoxDefaultButton.Button1,
                     MessageBoxOptions.ServiceNotification);
             }
+        }
+
+        private void prntBtn_Click(object sender, EventArgs e)
+        {
+            //string Name = NameBox.Text;
+            //string lastnName = lNameBox.Text;
+            //string phoneNumber = phoneBox.Text;
+            //string address = IPBox.Text;
+            //string prescription = string.Join("\n", gridView.Rows.Cast<DataGridViewRow>()
+            //    .Select(row => row.Cells["PrescriptionColumn"].Value.ToString()));
+
+            //using (var PdfWritter = new PdfWriter("Prescription.pdf"))
+            //{
+            //    using (var pdf = new PdfDocument(PdfWriter))
+            //    {
+            //        var document = new document(pdf);
+
+            //        document.Add(new Paragraph($"Name: {Name} {lastnName} \nPhone Number: {phoneNumber} \nAddress: {address} \n\nPrescription Information: \n{prescription}"));
+
+                    
+                        
+            //    }
+            //}
+            //MessageBox.Show("Prescription generated successfully");
+
         }
     }
 }
