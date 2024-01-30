@@ -57,7 +57,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form3";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "KYS";
+            Text = "LowTierGod's Message to Austin";
             FormClosing += Form3_FormClosing;
             Load += Form3_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

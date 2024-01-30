@@ -76,13 +76,6 @@ namespace Final
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Insertion Successful",
-                    "Success",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.ServiceNotification);
-
             DataTable tab = (DataTable)gridView.DataSource;
 
             DataRow row = tab.NewRow();
@@ -102,6 +95,15 @@ namespace Final
             row[5] = per;
 
             tab.Rows.Add(row);
+
+            cmd.ExecuteNonQuery();
+            refillGrid();
+            //MessageBox.Show("Insertion Successful",
+            //     "Success",
+            //     MessageBoxButtons.OK,
+            //     MessageBoxIcon.Information,
+            //     MessageBoxDefaultButton.Button1,
+            //     MessageBoxOptions.ServiceNotification);
         }
 
         private void searchBox_LeadingIconClick(object sender, EventArgs e)
