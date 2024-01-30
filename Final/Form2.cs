@@ -58,9 +58,6 @@ namespace Final
             {
                 gridView.Rows.RemoveAt(this.gridView.SelectedRows[0].Index);
             }
-            updateBtn_Click(sender, e);
-
-            MessageBox.Show("Successfully deleted patient", "Success");
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
@@ -97,17 +94,14 @@ namespace Final
             string res = IPBox.Text;
             string per = descBox.Text;
 
-            //row[0] = id;
-            //row[1] = ln;
-            //row[2] = fn;
-            //row[3] = num;
-            //row[4] = res;
-            //row[5] = per;
+            row[0] = id;
+            row[1] = ln;
+            row[2] = fn;
+            row[3] = num;
+            row[4] = res;
+            row[5] = per;
 
             tab.Rows.Add(row);
-            cmd.CommandText = "insert into meds where ID =";
-            cmd.ExecuteNonQuery();
-            refillGrid();
         }
 
         private void searchBox_LeadingIconClick(object sender, EventArgs e)
