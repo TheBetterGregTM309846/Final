@@ -20,6 +20,7 @@ namespace Final
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            MaximizeBox = false;
             SoundPlayer Die = new System.Media.SoundPlayer(Properties.Resources.Die);
             Die.Play();
             backgroundWorker1.RunWorkerAsync();
@@ -32,7 +33,7 @@ namespace Final
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            Thread.Sleep(21000);
+            Thread.Sleep(21710);
             this.Close();
         }
     }
