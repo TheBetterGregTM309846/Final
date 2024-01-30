@@ -196,7 +196,7 @@
             deleteBtn.Depth = 0;
             deleteBtn.Icon = (Image)resources.GetObject("deleteBtn.Icon");
             deleteBtn.Image = (Image)resources.GetObject("deleteBtn.Image");
-            deleteBtn.Location = new Point(671, 388);
+            deleteBtn.Location = new Point(695, 388);
             deleteBtn.MouseState = MaterialSkin.MouseState.HOVER;
             deleteBtn.Name = "deleteBtn";
             deleteBtn.Size = new Size(56, 56);
@@ -240,7 +240,7 @@
             searchBox.SelectionLength = 0;
             searchBox.SelectionStart = 0;
             searchBox.ShortcutsEnabled = true;
-            searchBox.Size = new Size(640, 48);
+            searchBox.Size = new Size(652, 48);
             searchBox.TabIndex = 8;
             searchBox.TabStop = false;
             searchBox.TextAlign = HorizontalAlignment.Left;
@@ -248,6 +248,7 @@
             searchBox.UseAccent = false;
             searchBox.UseSystemPasswordChar = false;
             searchBox.LeadingIconClick += searchBox_LeadingIconClick;
+            searchBox.TrailingIconClick += searchBox_TrailingIconClick;
             // 
             // updateBtn
             // 
@@ -257,7 +258,7 @@
             updateBtn.Depth = 0;
             updateBtn.HighEmphasis = true;
             updateBtn.Icon = null;
-            updateBtn.Location = new Point(659, 453);
+            updateBtn.Location = new Point(683, 453);
             updateBtn.Margin = new Padding(4, 6, 4, 6);
             updateBtn.MouseState = MaterialSkin.MouseState.HOVER;
             updateBtn.Name = "updateBtn";
@@ -278,7 +279,7 @@
             prntBtn.Depth = 0;
             prntBtn.HighEmphasis = true;
             prntBtn.Icon = null;
-            prntBtn.Location = new Point(660, 508);
+            prntBtn.Location = new Point(684, 508);
             prntBtn.Margin = new Padding(4, 6, 4, 6);
             prntBtn.MouseState = MaterialSkin.MouseState.HOVER;
             prntBtn.Name = "prntBtn";
@@ -294,7 +295,7 @@
             // 
             groupBox1.Location = new Point(5, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(416, 323);
+            groupBox1.Size = new Size(416, 317);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             groupBox1.Text = "Adding a patient";
@@ -306,14 +307,14 @@
             gridView.Name = "gridView";
             gridView.RowHeadersWidth = 51;
             gridView.RowTemplate.Height = 25;
-            gridView.Size = new Size(639, 257);
+            gridView.Size = new Size(652, 257);
             gridView.TabIndex = 11;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(747, 658);
+            ClientSize = new Size(763, 658);
             Controls.Add(gridView);
             Controls.Add(prntBtn);
             Controls.Add(updateBtn);

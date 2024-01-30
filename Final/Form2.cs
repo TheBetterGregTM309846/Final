@@ -19,7 +19,6 @@ namespace Final
         OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\final.accdb")); //Checks for final.accdb on every system.
         OleDbCommand cmd = new OleDbCommand();
 
-
         public Form2(string value) // passes the username to the form
         {
             InitializeComponent();
@@ -37,7 +36,6 @@ namespace Final
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
             MaximizeBox = false; // Prevents fullscreen button from working.
             conn.Open(); // opens a connection to the access file.
             cmd.Connection = conn; // Tells the cmd command to work in this connection.
@@ -57,11 +55,6 @@ namespace Final
         private void deleteBtn_Click(object sender, EventArgs e)
         {
 
-            foreach (DataGridViewRow row in gridView.SelectedRows)
-            {
-                gridView.Rows.RemoveAt(this.gridView.SelectedRows[0].Index);
-            }
-
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
@@ -80,6 +73,12 @@ namespace Final
 
         private void addBtn_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Insertion Successful",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.ServiceNotification);
 
             DataTable tab = (DataTable)gridView.DataSource;
 
@@ -100,19 +99,36 @@ namespace Final
             row[5] = per;
 
             tab.Rows.Add(row);
-
         }
 
         private void searchBox_LeadingIconClick(object sender, EventArgs e)
         {
-            //DataTable tab = (DataTable)gridView.DataSource;
-            //List<DataGridViewRow> yourList = null;
 
-            //gridView.DataSource = yourList;
+        }
 
-            //yourList.Clear();
-
-
+        private void searchBox_TrailingIconClick(object sender, EventArgs e)
+        {
+            string search = searchBox.Text;
+            try
+            {
+                foreach (DataGridViewRow row in gridView.Rows)
+                {
+                    if (row.Cells[1].Value.ToString().Contains(search))
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("That patient doesn't exist.",
+                    "Warning",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.ServiceNotification);
+            }
         }
     }
 }
