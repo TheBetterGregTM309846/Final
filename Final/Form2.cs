@@ -54,7 +54,10 @@ namespace Final
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-
+            foreach (DataGridViewRow row in gridView.SelectedRows)
+            {
+                gridView.Rows.RemoveAt(this.gridView.SelectedRows[0].Index);
+            }
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
