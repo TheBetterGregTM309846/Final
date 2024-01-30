@@ -98,7 +98,7 @@ namespace Final
             //row[5] = per;
 
             cmd.CommandText = "insert into meds ([LName], [FName], [PhoneNum], [Residence], [Prescription]) values (@first,@second,@third,@fourth,@fifth)";
-            cmd.Parameters.Add("@first", OleDbType.VarChar).Value = ln ;
+            cmd.Parameters.Add("@first", OleDbType.VarChar).Value = ln;
             cmd.Parameters.Add("@second", OleDbType.VarChar).Value = fn;
             cmd.Parameters.Add("@third", OleDbType.VarChar).Value = num;
             cmd.Parameters.Add("@fourth", OleDbType.VarChar).Value = res;
@@ -151,6 +151,17 @@ namespace Final
 
         private void prntBtn_Click(object sender, EventArgs e)
         {
+            View.ExportToPdf("Drugs.pdf");
+            pdfExport.StartInfo.FileName = "AcroRD32.exe";
+            pdfExport.StartInfo.Arguements = "Drugs.pdf";
+            pdfExport.Start();
+
+            //cmd.Parameters.Add("@first", OleDbType.VarChar).Value = ln;
+            //cmd.Parameters.Add("@second", OleDbType.VarChar).Value = fn;
+            //cmd.Parameters.Add("@third", OleDbType.VarChar).Value = num;
+            //cmd.Parameters.Add("@fourth", OleDbType.VarChar).Value = res;
+            //cmd.Parameters.Add("@fifth", OleDbType.VarChar).Value = per;
+
             //string Name = NameBox.Text;
             //string lastnName = lNameBox.Text;
             //string phoneNumber = phoneBox.Text;
@@ -164,10 +175,10 @@ namespace Final
             //    {
             //        var document = new document(pdf);
 
-            //        document.Add(new Paragraph($"Name: {Name} {lastnName} \nPhone Number: {phoneNumber} \nAddress: {address} \n\nPrescription Information: \n{prescription}"));
+            //        document.Add(new Paragraph($"Name: {ln} {fn} \nPhone Number: {num} \nAddress: {res} \n\nPrescription Information: \n{per}"));
 
-                    
-                        
+
+
             //    }
             //}
             //MessageBox.Show("Prescription generated successfully");
