@@ -20,6 +20,7 @@ namespace Final
         {
             OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\final.accdb")); //Checks for final.accdb on every system.
             conn.Open(); // opens connection to the database.
+            //if (nameCBox.Text = ) { }
             OleDbCommand command = new OleDbCommand("SELECT * FROM users where Username='" + nameCBox.Text + "' and Password='" + passBox.Text + "'", conn); // creates the command to check the database for the password.
             command.ExecuteNonQuery(); // executes a non-query command, or one that doesn't return a set of rows.
 

@@ -196,7 +196,7 @@
             deleteBtn.Depth = 0;
             deleteBtn.Icon = (Image)resources.GetObject("deleteBtn.Icon");
             deleteBtn.Image = (Image)resources.GetObject("deleteBtn.Image");
-            deleteBtn.Location = new Point(695, 388);
+            deleteBtn.Location = new Point(693, 389);
             deleteBtn.MouseState = MaterialSkin.MouseState.HOVER;
             deleteBtn.Name = "deleteBtn";
             deleteBtn.Size = new Size(56, 56);
@@ -228,7 +228,7 @@
             searchBox.HideSelection = true;
             searchBox.Hint = "Search by last name";
             searchBox.LeadingIcon = null;
-            searchBox.Location = new Point(13, 333);
+            searchBox.Location = new Point(5, 335);
             searchBox.MaxLength = 32767;
             searchBox.MouseState = MaterialSkin.MouseState.OUT;
             searchBox.Name = "searchBox";
@@ -240,7 +240,7 @@
             searchBox.SelectionLength = 0;
             searchBox.SelectionStart = 0;
             searchBox.ShortcutsEnabled = true;
-            searchBox.Size = new Size(652, 48);
+            searchBox.Size = new Size(670, 48);
             searchBox.TabIndex = 8;
             searchBox.TabStop = false;
             searchBox.TextAlign = HorizontalAlignment.Left;
@@ -258,7 +258,7 @@
             updateBtn.Depth = 0;
             updateBtn.HighEmphasis = true;
             updateBtn.Icon = null;
-            updateBtn.Location = new Point(683, 453);
+            updateBtn.Location = new Point(681, 454);
             updateBtn.Margin = new Padding(4, 6, 4, 6);
             updateBtn.MouseState = MaterialSkin.MouseState.HOVER;
             updateBtn.Name = "updateBtn";
@@ -279,7 +279,7 @@
             prntBtn.Depth = 0;
             prntBtn.HighEmphasis = true;
             prntBtn.Icon = null;
-            prntBtn.Location = new Point(684, 508);
+            prntBtn.Location = new Point(682, 509);
             prntBtn.Margin = new Padding(4, 6, 4, 6);
             prntBtn.MouseState = MaterialSkin.MouseState.HOVER;
             prntBtn.Name = "prntBtn";
@@ -303,18 +303,18 @@
             // gridView
             // 
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Location = new Point(13, 388);
+            gridView.Location = new Point(5, 389);
             gridView.Name = "gridView";
             gridView.RowHeadersWidth = 51;
             gridView.RowTemplate.Height = 25;
-            gridView.Size = new Size(652, 257);
+            gridView.Size = new Size(670, 250);
             gridView.TabIndex = 11;
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(763, 658);
+            ClientSize = new Size(766, 649);
             Controls.Add(gridView);
             Controls.Add(prntBtn);
             Controls.Add(updateBtn);
