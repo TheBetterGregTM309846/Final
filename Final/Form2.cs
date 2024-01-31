@@ -45,11 +45,6 @@ namespace Final
             refillGrid();
         }
 
-        private void fNameBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Close(); //Closes every relating form.
@@ -57,12 +52,11 @@ namespace Final
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in gridView.SelectedRows)
+            foreach (DataGridViewRow row in gridView.SelectedRows) //For each row selected...
             {
-                gridView.Rows.RemoveAt(this.gridView.SelectedRows[0].Index);
+                gridView.Rows.RemoveAt(this.gridView.SelectedRows[0].Index); //...it deletes the selected row (repeats for however many rows are selected).
             }
-            updateBtn_Click(sender, e);
-
+            updateBtn_Click(sender, e); //Then it updates the grid using update button's event.
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
@@ -88,13 +82,25 @@ namespace Final
             string per = descBox.Text;
 
             cmd.CommandText = "insert into meds ([LName], [FName], [PhoneNum], [Residence], [Prescription]) values (@first,@second,@third,@fourth,@fifth)";
+
+            //Tells the computer where to insert (column), the second half tells it what it should insert...
+
             cmd.Parameters.Add("@first", OleDbType.VarChar).Value = ln;
             cmd.Parameters.Add("@second", OleDbType.VarChar).Value = fn;
             cmd.Parameters.Add("@third", OleDbType.VarChar).Value = num;
             cmd.Parameters.Add("@fourth", OleDbType.VarChar).Value = res;
             cmd.Parameters.Add("@fifth", OleDbType.VarChar).Value = per;
+
+            //...the values are set here.
+
             cmd.ExecuteNonQuery();
+
+            //Excecute goes forth with the action.
+
             cmd.Parameters.Clear();
+
+            //This clears the parameters to be used again.
+
             refillGrid();
 
             MessageBox.Show("Insertion Successful",
@@ -111,19 +117,14 @@ namespace Final
             descBox.Text = string.Empty;
         }
 
-        private void searchBox_LeadingIconClick(object sender, EventArgs e)
-        {
-
-        }
-
         private void searchBox_TrailingIconClick(object sender, EventArgs e)
         {
-            string search = searchBox.Text;
+            string search = searchBox.Text; //Variable used because Hynes likes them.
 
             DataTable tab = (DataTable)gridView.DataSource;
 
             DataView guys = tab.DefaultView;
-            guys.RowFilter = "LName like '%" + search + "%'";
+            guys.RowFilter = "LName like '%" + search + "%'"; //Filters the LName column in search of what is in the search box (searchBox.Text).
         }
 
         private void prntBtn_Click(object sender, EventArgs e)
@@ -134,13 +135,10 @@ namespace Final
             string gres = gridView.CurrentRow.Cells["Residence"].Value.ToString();
             string gper = gridView.CurrentRow.Cells["Prescription"].Value.ToString();
 
-
             //Turns all the values of the selected row into variables for later use.
 
             iTextSharp.text.Document doc = new iTextSharp.text.Document();
-
             BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
-
             iTextSharp.text.Font font = new iTextSharp.text.Font(bf, 20, iTextSharp.text.Font.BOLD);
 
             //Sets fonts for the PDF file.
@@ -157,26 +155,27 @@ namespace Final
             //Sets up how the document will look.
 
             doc.Open();
+
+            //Opens the doc.
+
             doc.Add(header);
             doc.Add(lastD);
             doc.Add(firstD);
             doc.Add(numD);
             doc.Add(resD);
             doc.Add(perD);
+
+            //Adds all of the paragraphs made prior.
+
             doc.Close();
 
-            //Adds all the variables from before to the doccument and then closes it.
+            //Closes the doc.
 
             MessageBox.Show("Print Successful.",
                    "Success!",
                    MessageBoxButtons.OK,
                    MessageBoxIcon.Information,
                    MessageBoxDefaultButton.Button1);
-        }
-
-        private void searchBox_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -32,7 +32,6 @@
             nameCBox = new MaterialSkin.Controls.MaterialComboBox();
             antiLoggusBtn = new MaterialSkin.Controls.MaterialButton();
             passBox = new MaterialSkin.Controls.MaterialTextBox2();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             showPass = new MaterialSkin.Controls.MaterialSwitch();
             SuspendLayout();
             // 
@@ -110,10 +109,6 @@
             passBox.UseAccent = false;
             passBox.UseSystemPasswordChar = false;
             // 
-            // backgroundWorker1
-            // 
-            backgroundWorker1.DoWork += backgroundWorker1_DoWork;
-            // 
             // showPass
             // 
             showPass.AutoSize = true;
@@ -154,7 +149,6 @@
         private MaterialSkin.Controls.MaterialComboBox nameCBox;
         private MaterialSkin.Controls.MaterialButton antiLoggusBtn;
         private MaterialSkin.Controls.MaterialTextBox2 passBox;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private MaterialSkin.Controls.MaterialSwitch showPass;
     }
 }

@@ -14,13 +14,7 @@ namespace Final
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Austin Morrison-Prieur
-            //Gregory Buckley
-            //Gregory Hynes
-            //Mann Talati
-
             OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\final.accdb")); //Checks for final.accdb on every system.
-
             conn.Open();
             OleDbCommand cmd = new OleDbCommand("select * from users", conn);
             OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
@@ -32,11 +26,13 @@ namespace Final
             nameCBox.DataSource = ds.Tables[0];
             nameCBox.DisplayMember = "Username";
             nameCBox.ValueMember = "Username";
+
+            //Displays the names of all names of the users in the combobox.
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\final.accdb")); //Checks for final.accdb on every system.
+            OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\final.accdb"));
             conn.Open(); // opens connection to the database.
 
             OleDbCommand command = new OleDbCommand("SELECT * FROM users where Username='" + nameCBox.Text + "' and Password='" + passBox.Text + "'", conn); // creates the command to check the database for the password.
@@ -66,19 +62,7 @@ namespace Final
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
-        }
-
-        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
-        {
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            string user = nameCBox.Text; // Creates a variable to be used to display username on the second form.
-            Form2 TBD = new Form2(user); // Passes said variable.
-            this.Hide(); // Used to hide the first form.
-            TBD.ShowDialog(); // Used to display the second form.
+            this.Close(); //I don't know what this does.
         }
 
         private void showPass_CheckedChanged(object sender, EventArgs e)
@@ -88,6 +72,8 @@ namespace Final
                 passBox.PasswordChar = '\0';
             }
             else { passBox.PasswordChar = '●'; }
+
+            //Allows you to see your passowrd if  showPass has been toggled.
         }
     }
 }

@@ -24,6 +24,8 @@ namespace Final
             SoundPlayer Die = new System.Media.SoundPlayer(Properties.Resources.Die);
             Die.Play();
             backgroundWorker1.RunWorkerAsync();
+
+            //Plays the sound of Austin's mandatory message.
         }
 
         private void Form3_FormClosing(object sender, FormClosingEventArgs e)
@@ -35,11 +37,8 @@ namespace Final
         {
             Thread.Sleep(21710);
             this.Close();
-        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            //Waits for the exact amount of time in the sound file and then closes it.
         }
     }
 }

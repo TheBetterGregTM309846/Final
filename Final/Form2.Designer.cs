@@ -73,7 +73,6 @@
             FNameBox.TrailingIcon = null;
             FNameBox.UseAccent = false;
             FNameBox.UseSystemPasswordChar = false;
-            FNameBox.Click += fNameBox_Click;
             // 
             // LNameBox
             // 
@@ -247,9 +246,7 @@
             searchBox.TrailingIcon = Properties.Resources._1200px_Magnifying_glass_icon_svg;
             searchBox.UseAccent = false;
             searchBox.UseSystemPasswordChar = false;
-            searchBox.LeadingIconClick += searchBox_LeadingIconClick;
             searchBox.TrailingIconClick += searchBox_TrailingIconClick;
-            searchBox.Click += searchBox_Click;
             // 
             // updateBtn
             // 
