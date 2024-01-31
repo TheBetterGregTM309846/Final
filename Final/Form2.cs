@@ -103,6 +103,12 @@ namespace Final
             MessageBoxIcon.Information,
             MessageBoxDefaultButton.Button1,
             MessageBoxOptions.ServiceNotification);
+
+            LNameBox.Text = string.Empty;
+            FNameBox.Text = string.Empty;
+            phoneBox.Text = string.Empty;
+            IPBox.Text = string.Empty;
+            descBox.Text = string.Empty;
         }
 
         private void searchBox_LeadingIconClick(object sender, EventArgs e)
@@ -114,17 +120,10 @@ namespace Final
         {
             string search = searchBox.Text;
 
+            DataTable tab = (DataTable)gridView.DataSource;
 
-            /*
-            foreach (DataGridViewRow row in gridView.Rows)
-            {
-                row.Visible = false;
-                if (row.Cells[1].Value.ToString().Contains(search))
-                {
-                    row.Visible = true;
-                    break;
-                }
-            }*/
+            DataView guys = tab.DefaultView;
+            guys.RowFilter = "LName like '%" + search + "%'";
         }
 
         private void prntBtn_Click(object sender, EventArgs e)
@@ -173,8 +172,11 @@ namespace Final
                    MessageBoxButtons.OK,
                    MessageBoxIcon.Information,
                    MessageBoxDefaultButton.Button1);
+        }
 
-            //Reminder to change "perscription" to "prescription" in base table and then upload said table to GitHub. Also a reminder to update all the WinForm Lessons and upload the code to Drive.
+        private void searchBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
