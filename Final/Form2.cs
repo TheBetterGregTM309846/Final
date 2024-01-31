@@ -136,38 +136,52 @@ namespace Final
 
         private void prntBtn_Click(object sender, EventArgs e)
         {
-            //View.ExportToPdf("Drugs.pdf");
-            //pdfExport.StartInfo.FileName = "AcroRD32.exe";
-            //pdfExport.StartInfo.Arguements = "Drugs.pdf";
-            //pdfExport.Start();
-
-            //cmd.Parameters.Add("@first", OleDbType.VarChar).Value = ln;
-            //cmd.Parameters.Add("@second", OleDbType.VarChar).Value = fn;
-            //cmd.Parameters.Add("@third", OleDbType.VarChar).Value = num;
-            //cmd.Parameters.Add("@fourth", OleDbType.VarChar).Value = res;
-            //cmd.Parameters.Add("@fifth", OleDbType.VarChar).Value = per;
-
-            //string Name = NameBox.Text;
-            //string lastnName = lNameBox.Text;
-            //string phoneNumber = phoneBox.Text;
-            //string address = IPBox.Text;
-            //string prescription = string.Join("\n", gridView.Rows.Cast<DataGridViewRow>()
-            //    .Select(row => row.Cells["PrescriptionColumn"].Value.ToString()));
-
-            //using (var PdfWritter = new PdfWriter("Prescription.pdf"))
-            //{
-            //    using (var pdf = new PdfDocument(PdfWriter))
-            //    {
-            //        var document = new document(pdf);
-
-            //        document.Add(new Paragraph($"Name: {ln} {fn} \nPhone Number: {num} \nAddress: {res} \n\nPrescription Information: \n{per}"));
+            string gln = gridView.CurrentRow.Cells["LName"].Value.ToString();
+            string gfn = gridView.CurrentRow.Cells["FName"].Value.ToString();
+            string gnum = gridView.CurrentRow.Cells["PhoneNum"].Value.ToString();
+            string gres = gridView.CurrentRow.Cells["Residence"].Value.ToString();
+            string gper = gridView.CurrentRow.Cells["Perscription"].Value.ToString();
 
 
+            //Turns all the values of the selected row into variables for later use.
 
-            //    }
-            //}
-            //MessageBox.Show("Prescription generated successfully");
+            iTextSharp.text.Document doc = new iTextSharp.text.Document();
 
+            BaseFont bf = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+
+            iTextSharp.text.Font font = new iTextSharp.text.Font(bf, 20, iTextSharp.text.Font.BOLD);
+
+            //Sets fonts for the PDF file.
+
+            Paragraph header = new Paragraph("Perscription", font);
+            Paragraph lastD = new Paragraph("Last Name: " + gln, font);
+            Paragraph firstD = new Paragraph("First Name: " + gfn, font);
+            Paragraph numD = new Paragraph("Phone Number: " + gnum, font);
+            Paragraph resD = new Paragraph("Address: " + gres, font);
+            Paragraph perD = new Paragraph("Perscription and Comments: " + gper, font);
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + gfn + " " + gln + "'s Information.pdf", FileMode.Create));
+            doc.SetPageSize(new iTextSharp.text.Rectangle(this.Size.Width + doc.LeftMargin + doc.RightMargin, this.Size.Height + doc.TopMargin + doc.BottomMargin));
+
+            //Sets up how the document will look.
+
+            doc.Open();
+            doc.Add(header);
+            doc.Add(lastD);
+            doc.Add(firstD);
+            doc.Add(numD);
+            doc.Add(resD);
+            doc.Add(perD);
+            doc.Close();
+
+            //Adds all the variables from before to the doccument and then closes it.
+
+            MessageBox.Show("Print Successful.",
+                   "Success!",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Information,
+                   MessageBoxDefaultButton.Button1);
+
+            //Reminder to change "perscription" to "prescription" in base table and then upload said table to GitHub. Also a reminder to update all the WinForm Lessons and upload the code to Drive.
         }
     }
 }
