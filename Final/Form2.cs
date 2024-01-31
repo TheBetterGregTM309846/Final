@@ -81,11 +81,8 @@ namespace Final
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            DataTable tab = (DataTable)gridView.DataSource;
-
-            DataRow row = tab.NewRow();
             string ln = lNameBox.Text;
-            string fn = NameBox.Text;
+            string fn = FNameBox.Text;
             string num = phoneBox.Text;
             string res = IPBox.Text;
             string per = descBox.Text;
@@ -97,26 +94,22 @@ namespace Final
             //row[4] = res;
             //row[5] = per;
 
-            cmd.CommandText = "insert into meds ([LName], [FName], [PhoneNum], [Residence], [Prescription]) values (@first,@second,@third,@fourth,@fifth)";
+            cmd.CommandText = "insert into meds ([LName], [FName], [PhoneNum], [Residence], [Perscription]) values (@first,@second,@third,@fourth,@fifth)";
             cmd.Parameters.Add("@first", OleDbType.VarChar).Value = ln;
             cmd.Parameters.Add("@second", OleDbType.VarChar).Value = fn;
             cmd.Parameters.Add("@third", OleDbType.VarChar).Value = num;
             cmd.Parameters.Add("@fourth", OleDbType.VarChar).Value = res;
             cmd.Parameters.Add("@fifth", OleDbType.VarChar).Value = per;
             cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
             refillGrid();
 
             MessageBox.Show("Insertion Successful",
-                    "Success",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.ServiceNotification);
-
-            tab.Rows.Add(row);
-
-            cmd.ExecuteNonQuery();
-            refillGrid();
+            "Success",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1,
+            MessageBoxOptions.ServiceNotification);
         }
 
         private void searchBox_LeadingIconClick(object sender, EventArgs e)
@@ -127,34 +120,26 @@ namespace Final
         private void searchBox_TrailingIconClick(object sender, EventArgs e)
         {
             string search = searchBox.Text;
-            try
+
+
+            /*
+            foreach (DataGridViewRow row in gridView.Rows)
             {
-                foreach (DataGridViewRow row in gridView.Rows)
+                row.Visible = false;
+                if (row.Cells[1].Value.ToString().Contains(search))
                 {
-                    if (row.Cells[1].Value.ToString().Contains(search))
-                    {
-                        row.Selected = true;
-                        break;
-                    }
+                    row.Visible = true;
+                    break;
                 }
-            }
-            catch
-            {
-                MessageBox.Show("That patient doesn't exist.",
-                    "Warning",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error,
-                    MessageBoxDefaultButton.Button1,
-                    MessageBoxOptions.ServiceNotification);
-            }
+            }*/
         }
 
         private void prntBtn_Click(object sender, EventArgs e)
         {
-            View.ExportToPdf("Drugs.pdf");
-            pdfExport.StartInfo.FileName = "AcroRD32.exe";
-            pdfExport.StartInfo.Arguements = "Drugs.pdf";
-            pdfExport.Start();
+            //View.ExportToPdf("Drugs.pdf");
+            //pdfExport.StartInfo.FileName = "AcroRD32.exe";
+            //pdfExport.StartInfo.Arguements = "Drugs.pdf";
+            //pdfExport.Start();
 
             //cmd.Parameters.Add("@first", OleDbType.VarChar).Value = ln;
             //cmd.Parameters.Add("@second", OleDbType.VarChar).Value = fn;

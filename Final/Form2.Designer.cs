@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            NameBox = new MaterialSkin.Controls.MaterialTextBox2();
+            FNameBox = new MaterialSkin.Controls.MaterialTextBox2();
             lNameBox = new MaterialSkin.Controls.MaterialTextBox2();
             phoneBox = new MaterialSkin.Controls.MaterialTextBox2();
             IPBox = new MaterialSkin.Controls.MaterialTextBox2();
@@ -44,36 +44,36 @@
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             SuspendLayout();
             // 
-            // NameBox
+            // FNameBox
             // 
-            NameBox.AnimateReadOnly = false;
-            NameBox.BackgroundImageLayout = ImageLayout.None;
-            NameBox.CharacterCasing = CharacterCasing.Normal;
-            NameBox.Depth = 0;
-            NameBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            NameBox.HideSelection = true;
-            NameBox.Hint = "First name";
-            NameBox.LeadingIcon = null;
-            NameBox.Location = new Point(13, 33);
-            NameBox.MaxLength = 32767;
-            NameBox.MouseState = MaterialSkin.MouseState.OUT;
-            NameBox.Name = "NameBox";
-            NameBox.PasswordChar = '\0';
-            NameBox.PrefixSuffixText = null;
-            NameBox.ReadOnly = false;
-            NameBox.RightToLeft = RightToLeft.No;
-            NameBox.SelectedText = "";
-            NameBox.SelectionLength = 0;
-            NameBox.SelectionStart = 0;
-            NameBox.ShortcutsEnabled = true;
-            NameBox.Size = new Size(200, 48);
-            NameBox.TabIndex = 1;
-            NameBox.TabStop = false;
-            NameBox.TextAlign = HorizontalAlignment.Left;
-            NameBox.TrailingIcon = null;
-            NameBox.UseAccent = false;
-            NameBox.UseSystemPasswordChar = false;
-            NameBox.Click += fNameBox_Click;
+            FNameBox.AnimateReadOnly = false;
+            FNameBox.BackgroundImageLayout = ImageLayout.None;
+            FNameBox.CharacterCasing = CharacterCasing.Normal;
+            FNameBox.Depth = 0;
+            FNameBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            FNameBox.HideSelection = true;
+            FNameBox.Hint = "First name";
+            FNameBox.LeadingIcon = null;
+            FNameBox.Location = new Point(13, 33);
+            FNameBox.MaxLength = 32767;
+            FNameBox.MouseState = MaterialSkin.MouseState.OUT;
+            FNameBox.Name = "FNameBox";
+            FNameBox.PasswordChar = '\0';
+            FNameBox.PrefixSuffixText = null;
+            FNameBox.ReadOnly = false;
+            FNameBox.RightToLeft = RightToLeft.No;
+            FNameBox.SelectedText = "";
+            FNameBox.SelectionLength = 0;
+            FNameBox.SelectionStart = 0;
+            FNameBox.ShortcutsEnabled = true;
+            FNameBox.Size = new Size(200, 48);
+            FNameBox.TabIndex = 1;
+            FNameBox.TabStop = false;
+            FNameBox.TextAlign = HorizontalAlignment.Left;
+            FNameBox.TrailingIcon = null;
+            FNameBox.UseAccent = false;
+            FNameBox.UseSystemPasswordChar = false;
+            FNameBox.Click += fNameBox_Click;
             // 
             // lNameBox
             // 
@@ -306,6 +306,7 @@
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridView.Location = new Point(5, 389);
             gridView.Name = "gridView";
+            gridView.ReadOnly = true;
             gridView.RowHeadersWidth = 51;
             gridView.RowTemplate.Height = 25;
             gridView.Size = new Size(670, 250);
@@ -326,7 +327,7 @@
             Controls.Add(IPBox);
             Controls.Add(phoneBox);
             Controls.Add(lNameBox);
-            Controls.Add(NameBox);
+            Controls.Add(FNameBox);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -341,7 +342,7 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTextBox2 NameBox;
+        private MaterialSkin.Controls.MaterialTextBox2 FNameBox;
         private MaterialSkin.Controls.MaterialTextBox2 lNameBox;
         private MaterialSkin.Controls.MaterialTextBox2 phoneBox;
         private MaterialSkin.Controls.MaterialTextBox2 IPBox;
