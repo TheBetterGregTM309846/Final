@@ -81,7 +81,7 @@ namespace Final
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            string ln = lNameBox.Text;
+            string ln = LNameBox.Text;
             string fn = FNameBox.Text;
             string num = phoneBox.Text;
             string res = IPBox.Text;

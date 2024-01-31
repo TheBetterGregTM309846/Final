@@ -36,5 +36,10 @@ namespace Final
             Thread.Sleep(21710);
             this.Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

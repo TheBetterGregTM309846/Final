@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             FNameBox = new MaterialSkin.Controls.MaterialTextBox2();
-            lNameBox = new MaterialSkin.Controls.MaterialTextBox2();
+            LNameBox = new MaterialSkin.Controls.MaterialTextBox2();
             phoneBox = new MaterialSkin.Controls.MaterialTextBox2();
             IPBox = new MaterialSkin.Controls.MaterialTextBox2();
             descBox = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
@@ -75,35 +75,35 @@
             FNameBox.UseSystemPasswordChar = false;
             FNameBox.Click += fNameBox_Click;
             // 
-            // lNameBox
+            // LNameBox
             // 
-            lNameBox.AnimateReadOnly = false;
-            lNameBox.BackgroundImageLayout = ImageLayout.None;
-            lNameBox.CharacterCasing = CharacterCasing.Normal;
-            lNameBox.Depth = 0;
-            lNameBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lNameBox.HideSelection = true;
-            lNameBox.Hint = "Last Name";
-            lNameBox.LeadingIcon = null;
-            lNameBox.Location = new Point(219, 33);
-            lNameBox.MaxLength = 32767;
-            lNameBox.MouseState = MaterialSkin.MouseState.OUT;
-            lNameBox.Name = "lNameBox";
-            lNameBox.PasswordChar = '\0';
-            lNameBox.PrefixSuffixText = null;
-            lNameBox.ReadOnly = false;
-            lNameBox.RightToLeft = RightToLeft.No;
-            lNameBox.SelectedText = "";
-            lNameBox.SelectionLength = 0;
-            lNameBox.SelectionStart = 0;
-            lNameBox.ShortcutsEnabled = true;
-            lNameBox.Size = new Size(192, 48);
-            lNameBox.TabIndex = 2;
-            lNameBox.TabStop = false;
-            lNameBox.TextAlign = HorizontalAlignment.Left;
-            lNameBox.TrailingIcon = null;
-            lNameBox.UseAccent = false;
-            lNameBox.UseSystemPasswordChar = false;
+            LNameBox.AnimateReadOnly = false;
+            LNameBox.BackgroundImageLayout = ImageLayout.None;
+            LNameBox.CharacterCasing = CharacterCasing.Normal;
+            LNameBox.Depth = 0;
+            LNameBox.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            LNameBox.HideSelection = true;
+            LNameBox.Hint = "Last Name";
+            LNameBox.LeadingIcon = null;
+            LNameBox.Location = new Point(219, 33);
+            LNameBox.MaxLength = 32767;
+            LNameBox.MouseState = MaterialSkin.MouseState.OUT;
+            LNameBox.Name = "LNameBox";
+            LNameBox.PasswordChar = '\0';
+            LNameBox.PrefixSuffixText = null;
+            LNameBox.ReadOnly = false;
+            LNameBox.RightToLeft = RightToLeft.No;
+            LNameBox.SelectedText = "";
+            LNameBox.SelectionLength = 0;
+            LNameBox.SelectionStart = 0;
+            LNameBox.ShortcutsEnabled = true;
+            LNameBox.Size = new Size(192, 48);
+            LNameBox.TabIndex = 2;
+            LNameBox.TabStop = false;
+            LNameBox.TextAlign = HorizontalAlignment.Left;
+            LNameBox.TrailingIcon = null;
+            LNameBox.UseAccent = false;
+            LNameBox.UseSystemPasswordChar = false;
             // 
             // phoneBox
             // 
@@ -326,7 +326,7 @@
             Controls.Add(descBox);
             Controls.Add(IPBox);
             Controls.Add(phoneBox);
-            Controls.Add(lNameBox);
+            Controls.Add(LNameBox);
             Controls.Add(FNameBox);
             Controls.Add(groupBox1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -343,7 +343,7 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialTextBox2 FNameBox;
-        private MaterialSkin.Controls.MaterialTextBox2 lNameBox;
+        private MaterialSkin.Controls.MaterialTextBox2 LNameBox;
         private MaterialSkin.Controls.MaterialTextBox2 phoneBox;
         private MaterialSkin.Controls.MaterialTextBox2 IPBox;
         private MaterialSkin.Controls.MaterialMultiLineTextBox2 descBox;
