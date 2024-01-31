@@ -87,14 +87,7 @@ namespace Final
             string res = IPBox.Text;
             string per = descBox.Text;
 
-            //row[0] = id;
-            //row[1] = ln;
-            //row[2] = fn;
-            //row[3] = num;
-            //row[4] = res;
-            //row[5] = per;
-
-            cmd.CommandText = "insert into meds ([LName], [FName], [PhoneNum], [Residence], [Perscription]) values (@first,@second,@third,@fourth,@fifth)";
+            cmd.CommandText = "insert into meds ([LName], [FName], [PhoneNum], [Residence], [Prescription]) values (@first,@second,@third,@fourth,@fifth)";
             cmd.Parameters.Add("@first", OleDbType.VarChar).Value = ln;
             cmd.Parameters.Add("@second", OleDbType.VarChar).Value = fn;
             cmd.Parameters.Add("@third", OleDbType.VarChar).Value = num;
@@ -140,7 +133,7 @@ namespace Final
             string gfn = gridView.CurrentRow.Cells["FName"].Value.ToString();
             string gnum = gridView.CurrentRow.Cells["PhoneNum"].Value.ToString();
             string gres = gridView.CurrentRow.Cells["Residence"].Value.ToString();
-            string gper = gridView.CurrentRow.Cells["Perscription"].Value.ToString();
+            string gper = gridView.CurrentRow.Cells["Prescription"].Value.ToString();
 
 
             //Turns all the values of the selected row into variables for later use.
@@ -158,7 +151,7 @@ namespace Final
             Paragraph firstD = new Paragraph("First Name: " + gfn, font);
             Paragraph numD = new Paragraph("Phone Number: " + gnum, font);
             Paragraph resD = new Paragraph("Address: " + gres, font);
-            Paragraph perD = new Paragraph("Perscription and Comments: " + gper, font);
+            Paragraph perD = new Paragraph("Prescription and Comments: " + gper, font);
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + gfn + " " + gln + "'s Information.pdf", FileMode.Create));
             doc.SetPageSize(new iTextSharp.text.Rectangle(this.Size.Width + doc.LeftMargin + doc.RightMargin, this.Size.Height + doc.TopMargin + doc.BottomMargin));
 
